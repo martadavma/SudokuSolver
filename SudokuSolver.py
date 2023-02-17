@@ -78,7 +78,8 @@ def sudoku_solver(puzzle):
     if solver.check() == sat:
         # Get the solved values for each cell
         model = solver.model()
-        solution = [[model.evaluate(grid[i][j]).as_long() for j in range(9)] for i in range(9)]
+        solution = [[model.evaluate(grid[i][j]).as_long() 
+                     for j in range(9)] for i in range(9)]
         return solution
     else:
         # UNSAT
